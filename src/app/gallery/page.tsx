@@ -1,4 +1,5 @@
 import CloudinaryImage from "@/components/CloudinaryImage";
+import ImageGrid from "@/components/ImageGrid";
 import UploadBtn from "@/components/buttons/UploadBtn";
 import cloudinary from "cloudinary";
 
@@ -24,20 +25,18 @@ export default async function GalleryPage() {
           <UploadBtn />
         </div>
       </div>
-      <div className=" grid grid-cols-4 gap-4">
-        {results.resources.map((result) => (
-          <CloudinaryImage
-            imageData={result}
-            key={result.public_id}
-            path="/gallery"
-            // src={result.public_id}
-            // publicId={result.public_id}
-            // width="400"
-            // height="300"
-            // alt="Cloudinary Image"
-          />
-        ))}
-      </div>
+      <ImageGrid
+        images={results.resources}
+        getImage={(imagedata: SearchResult) => {
+          return (
+            <CloudinaryImage
+              imagedata={imagedata}
+              key={imagedata.public_id}
+              alt=""
+            />
+          );
+        }}
+      />
     </section>
   );
 }
