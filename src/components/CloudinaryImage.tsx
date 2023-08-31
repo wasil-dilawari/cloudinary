@@ -5,11 +5,11 @@ import { Heart } from "lucide-react";
 import { setFavouriteAction } from "@/lib/actions";
 import { useState, useTransition } from "react";
 import { SearchResult } from "@/app/gallery/page";
+import { ImageMenu } from "./ImageMenu";
 
 export default function CloudinaryImage(
   props: {
     imagedata: SearchResult;
-    // path: string;
     onUnheart?: (unheartedResource: SearchResult) => void;
   } & Omit<CldImageProps, "src">
 ) {
@@ -31,7 +31,7 @@ export default function CloudinaryImage(
       />
       {isFavourite ? (
         <Heart
-          className=" absolute top-2 right-2 fill-red-500 text-red-500 hover:fill-none hover:text-white cursor-pointer"
+          className=" absolute top-2 left-2 fill-red-500 text-red-500 hover:fill-none hover:text-white cursor-pointer"
           onClick={() => {
             onUnheart?.(imagedata);
             setIsFavourite(false);
@@ -42,7 +42,7 @@ export default function CloudinaryImage(
         />
       ) : (
         <Heart
-          className=" absolute top-2 right-2 hover:text-red-500 hover:fill-red-500 cursor-pointer"
+          className=" absolute top-2 left-2 hover:text-red-500 hover:fill-red-500 cursor-pointer"
           onClick={() => {
             setIsFavourite(true);
             startTransition(() => {
@@ -51,6 +51,9 @@ export default function CloudinaryImage(
           }}
         />
       )}
+      <div className=" absolute top-2 right-2">
+        <ImageMenu image={imagedata} />
+      </div>
     </div>
   );
 }

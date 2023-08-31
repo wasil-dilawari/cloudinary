@@ -17,15 +17,15 @@ export default function SideMenu() {
                 Gallery
               </Button>
             </Link>
+            <Link href="/favourites">
+              <Button variant="ghost" className="w-full justify-start gap-2">
+                <Heart strokeWidth={1.5} /> Favourites
+              </Button>
+            </Link>
             <Link href="/albums">
               <Button variant="ghost" className="w-full justify-start gap-2">
                 <Folder strokeWidth={1.5} />
                 Albums
-              </Button>
-            </Link>
-            <Link href="/favourites">
-              <Button variant="ghost" className="w-full justify-start gap-2">
-                <Heart strokeWidth={1.5} /> Favourites
               </Button>
             </Link>
           </div>

@@ -1,7 +1,6 @@
 // "use client";
 
 import { SearchResult } from "@/app/gallery/page";
-import CloudinaryImage from "./CloudinaryImage";
 import { ReactNode } from "react";
 
 export default function ImageGrid({
