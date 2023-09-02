@@ -30,7 +30,7 @@ export function ImageMenu({ image }: { image: SearchResult }) {
         <DropdownMenuItem className="">
           <Link
             href={`/edit?public_id=${encodeURIComponent(image.public_id)}`}
-            className=" w-full "
+            className=" w-full hover:no-underline"
           >
             <Button
               variant={"link"}
