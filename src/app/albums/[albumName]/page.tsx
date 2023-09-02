@@ -9,7 +9,7 @@ export type SearchResult = {
   tags: string[];
 };
 
-export default async function albumName({
+export default async function albumPage({
   params: { albumName },
 }: {
   params: { albumName: string };

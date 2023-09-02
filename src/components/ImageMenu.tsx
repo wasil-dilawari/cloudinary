@@ -1,4 +1,4 @@
-import { MenuIcon } from "lucide-react";
+import { MenuIcon, PencilIcon } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -10,6 +10,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { AddToAlbumDialog } from "./AddToAlbumDialog";
 import { SearchResult } from "@/app/gallery/page";
+import Link from "next/link";
 
 export function ImageMenu({ image }: { image: SearchResult }) {
   return (
@@ -25,6 +26,21 @@ export function ImageMenu({ image }: { image: SearchResult }) {
       <DropdownMenuContent>
         <DropdownMenuItem asChild>
           <AddToAlbumDialog image={image} />
+        </DropdownMenuItem>
+        <DropdownMenuItem asChild>
+          <Button
+            asChild
+            variant={"ghost"}
+            className=" cursor-pointer justify-start pl-4 "
+          >
+            <Link
+              href={`/edit?public_id=${encodeURIComponent(image.public_id)}`}
+              className=" flex justify-start"
+            >
+              <PencilIcon className="mr-2 h-4 w-4" />
+              Edit
+            </Link>
+          </Button>
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>

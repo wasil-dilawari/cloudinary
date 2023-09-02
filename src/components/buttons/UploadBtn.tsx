@@ -17,16 +17,20 @@ export default function UploadBtn() {
   const [imageId, setimageId] = useState("");
   const router = useRouter();
   return (
-    <Button asChild>
-      <div className=" flex gap-2">
-        <UploadIcon strokeWidth={1.5} />
-        <CldUploadButton
-          onUpload={(result: any) => {
-            router.refresh();
-          }}
-          uploadPreset="n3fk9rzi"
-        />
-      </div>
-    </Button>
+    <div className=" flex gap-2">
+      <CldUploadButton
+        onUpload={(result: any) => {
+          router.refresh();
+        }}
+        uploadPreset="n3fk9rzi"
+      >
+        <Button>
+          <div className=" flex gap-2 items-center">
+            <UploadIcon strokeWidth={1.5} />
+            <span>Upload</span>
+          </div>
+        </Button>
+      </CldUploadButton>
+    </div>
   );
 }
