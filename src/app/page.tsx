@@ -1,4 +1,5 @@
 import CloudinaryImage from "@/components/CloudinaryImage";
+import ForceRefresh from "@/components/ForceRefresh";
 import ImageGrid from "@/components/ImageGrid";
 import UploadBtn from "@/components/buttons/UploadBtn";
 import { SearchResult } from "@/lib/types";
@@ -15,6 +16,8 @@ export default async function Home() {
 
   return (
     <section className=" flex flex-col gap-8 ">
+      {/* <ForceRefresh /> */}
+
       <div className=" flex justify-between ">
         <h1 className=" text-4xl font-bold">Gallery</h1>
         <div className=" ">

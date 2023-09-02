@@ -22,8 +22,8 @@ export function AddToAlbumDialog({ image }: { image: SearchResult }) {
   const [openDialog, setOpenDialog] = useState(false);
   return (
     <Dialog open={openDialog} onOpenChange={setOpenDialog}>
-      <DialogTrigger asChild>
-        <Button variant="ghost">
+      <DialogTrigger asChild className="flex w-full justify-start">
+        <Button variant="link" className=" hover:no-underline">
           <FolderPlusIcon className="mr-2 h-4 w-4" />
           <span>Add to Album</span>
         </Button>
@@ -46,12 +46,6 @@ export function AddToAlbumDialog({ image }: { image: SearchResult }) {
               onChange={(e) => setAlbumName(e.currentTarget.value)}
             />
           </div>
-          {/* <div className="grid grid-cols-4 items-center gap-4">
-            <Label htmlFor="username" className="text-right">
-              Username
-            </Label>
-            <Input id="username" value="@peduarte" className="col-span-3" />
-          </div> */}
         </div>
         <DialogFooter>
           <Button

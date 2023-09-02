@@ -28,3 +28,6 @@ export async function addToAlbumAction(image: SearchResult, album: string) {
 export async function getFoldersAction() {
   return await cloudinary.v2.api.root_folders();
 }
+export async function deleteImageAction(publicId: string) {
+  await cloudinary.v2.api.delete_resources([publicId]);
+}
