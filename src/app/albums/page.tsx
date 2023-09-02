@@ -1,9 +1,8 @@
 import AlbumCard from "@/components/AlbumCard";
 import ForceRefresh from "@/components/ForceRefresh";
 import { getFoldersAction } from "@/lib/actions";
+import { Folder } from "@/lib/types";
 import cloudinary from "cloudinary";
-
-export type Folder = { name: string; path: string };
 
 export default async function AlbumsPage() {
   const { folders } = await getFoldersAction();

@@ -1,6 +1,6 @@
 // "use client";
 
-import { SearchResult } from "@/app/gallery/page";
+import { SearchResult } from "@/lib/types";
 import { ReactNode } from "react";
 
 export default function ImageGrid({

@@ -1,7 +1,7 @@
-import { Folder } from "@/app/albums/page";
 import { getFoldersAction } from "@/lib/actions";
 import { Button } from "./ui/button";
 import Link from "next/link";
+import { Folder } from "@/lib/types";
 
 export default async function AlbumList() {
   const { folders } = await getFoldersAction();

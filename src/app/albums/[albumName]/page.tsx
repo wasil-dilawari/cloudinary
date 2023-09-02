@@ -1,13 +1,8 @@
 import CloudinaryImage from "@/components/CloudinaryImage";
 import ForceRefresh from "@/components/ForceRefresh";
 import ImageGrid from "@/components/ImageGrid";
-import UploadBtn from "@/components/buttons/UploadBtn";
+import { SearchResult } from "@/lib/types";
 import cloudinary from "cloudinary";
-
-export type SearchResult = {
-  public_id: string;
-  tags: string[];
-};
 
 export default async function albumPage({
   params: { albumName },

@@ -9,8 +9,8 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { AddToAlbumDialog } from "./AddToAlbumDialog";
-import { SearchResult } from "@/app/gallery/page";
 import Link from "next/link";
+import { SearchResult } from "@/lib/types";
 
 export function ImageMenu({ image }: { image: SearchResult }) {
   return (

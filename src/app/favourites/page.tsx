@@ -1,9 +1,7 @@
-import CloudinaryImage from "@/components/CloudinaryImage";
-import UploadBtn from "@/components/buttons/UploadBtn";
 import cloudinary from "cloudinary";
-import { SearchResult } from "../gallery/page";
 import FavouritesList from "@/components/FavouriteList";
 import ForceRefresh from "@/components/ForceRefresh";
+import { SearchResult } from "@/lib/types";
 
 export default async function FavouritesPage() {
   const results = (await cloudinary.v2.search

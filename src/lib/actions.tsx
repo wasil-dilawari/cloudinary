@@ -1,6 +1,6 @@
 "use server";
-import { SearchResult } from "@/app/gallery/page";
 import cloudinary from "cloudinary";
+import { SearchResult } from "@/lib/types";
 
 export async function setFavouriteAction(
   publicId: string,

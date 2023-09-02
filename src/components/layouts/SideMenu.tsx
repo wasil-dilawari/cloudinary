@@ -12,7 +12,7 @@ export default function SideMenu() {
             Manage
           </h2>
           <div className="space-y-1">
-            <Link href="/gallery">
+            <Link href="/">
               <Button variant="ghost" className="w-full justify-start gap-2">
                 <ImageIcon strokeWidth={1.5} />
                 Gallery

@@ -1,6 +1,5 @@
 "use client";
 
-import { SearchResult } from "@/app/gallery/page";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -14,6 +13,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { addToAlbumAction } from "@/lib/actions";
+import { SearchResult } from "@/lib/types";
 import { FolderPlusIcon } from "lucide-react";
 import { useState } from "react";
 

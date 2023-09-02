@@ -4,8 +4,8 @@ import { CldImage, CldImageProps } from "next-cloudinary";
 import { Heart } from "lucide-react";
 import { setFavouriteAction } from "@/lib/actions";
 import { useState, useTransition } from "react";
-import { SearchResult } from "@/app/gallery/page";
 import { ImageMenu } from "./ImageMenu";
+import { SearchResult } from "@/lib/types";
 
 export default function CloudinaryImage(
   props: {
