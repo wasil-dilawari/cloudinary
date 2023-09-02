@@ -28,6 +28,7 @@ export default function CloudinaryImage(
         alt="Image Description "
         width="400"
         height="300"
+        sizes="100vw"
       />
       {isFavourite ? (
         <Heart

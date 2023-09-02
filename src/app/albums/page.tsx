@@ -8,7 +8,7 @@ export type Folder = { name: string; path: string };
 export default async function AlbumsPage() {
   const { folders } = await getFoldersAction();
   // const { folders } = foldersData;
-  console.log(folders);
+  // console.log(folders);
 
   return (
     <section className=" flex flex-col gap-8 ">

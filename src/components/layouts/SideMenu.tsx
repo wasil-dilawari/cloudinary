@@ -1,6 +1,7 @@
 import { Button } from "../ui/button";
 import Link from "next/link";
 import { Folder, Heart, ImageIcon } from "lucide-react";
+import AlbumList from "../AlbumList";
 
 export default function SideMenu() {
   return (
@@ -28,6 +29,7 @@ export default function SideMenu() {
                 Albums
               </Button>
             </Link>
+            <AlbumList />
           </div>
         </div>
       </div>

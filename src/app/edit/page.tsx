@@ -1,14 +1,19 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 import { CldImage } from "next-cloudinary";
 import React, { useState } from "react";
 
-export default function editImagePage({
+export default function EditImagePage({
   searchParams: { public_id },
 }: {
   searchParams: { public_id: string };
 }) {
+  const [prompt, setPrompt] = useState("");
+  const [tempprompt, setTempPrompt] = useState("");
+
   const [transformation, setTransformation] = useState<
     undefined | "generative-fill" | "face-blur" | "grayscale"
   >();
@@ -27,14 +32,27 @@ export default function editImagePage({
           >
             Clear All
           </Button>
-          <Button
-            variant={"secondary"}
-            onClick={() => {
-              setTransformation("generative-fill");
-            }}
-          >
-            Apply Generative Fill
-          </Button>
+          <div className="flex flex-col gap-2">
+            <Button
+              variant={"secondary"}
+              onClick={() => {
+                setPrompt(tempprompt);
+                setTransformation("generative-fill");
+              }}
+            >
+              Apply Generative Fill
+            </Button>
+            {/* <Label htmlFor="prompt" className="text-right">
+              Prompt:
+            </Label> */}
+            <Input
+              id="prompt"
+              placeholder="Provide Prompt for Fill"
+              className="col-span-3"
+              value={tempprompt}
+              onChange={(e) => setTempPrompt(e.currentTarget.value)}
+            />
+          </div>
           <Button
             variant={"secondary"}
             onClick={() => {
@@ -60,8 +78,9 @@ export default function editImagePage({
               width="800"
               height="300"
               alt=""
+              sizes="100vw"
               crop="pad"
-              fillBackground
+              fillBackground={{ prompt: `${prompt}` }}
             />
           )}
           {transformation === "face-blur" && (
@@ -70,7 +89,12 @@ export default function editImagePage({
               width="400"
               height="300"
               alt=""
-              blur="800"
+              sizes="100vw"
+              effects={[
+                {
+                  blurFaces: "800",
+                },
+              ]}
             />
           )}
           {transformation === "grayscale" && (
@@ -79,7 +103,12 @@ export default function editImagePage({
               width="400"
               height="300"
               alt=""
-              grayscale
+              sizes="100vw"
+              effects={[
+                {
+                  grayscale: true,
+                },
+              ]}
             />
           )}
         </div>

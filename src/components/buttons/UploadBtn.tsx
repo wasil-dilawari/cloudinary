@@ -1,7 +1,6 @@
 "use client";
 import { CldUploadButton } from "next-cloudinary";
-import { CldImage } from "next-cloudinary";
-import { useState } from "react";
+// import { useState } from "react";
 import { Button } from "../ui/button";
 import { useRouter } from "next/navigation";
 import { UploadIcon } from "lucide-react";
@@ -14,7 +13,7 @@ type UploadResult = {
 };
 
 export default function UploadBtn() {
-  const [imageId, setimageId] = useState("");
+  // const [imageId, setimageId] = useState("");
   const router = useRouter();
   return (
     <div className=" flex gap-2">
